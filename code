@@ -1,0 +1,21 @@
+from random import randint
+
+num = randint(1, 101)
+i = 6
+
+guess = int(input("Please enter a number: "))
+
+while guess != num:
+    if i == 0:
+        print("You are out of lives. The number was " + str(num) + ".")
+        exit()
+    elif guess > num:
+        print("Your guess is too high. ")
+        i -= 1
+    elif guess < num:
+        print("Your guess is too low. ")
+        i -= 1
+    print("You have " + str(i) + " lives remaining.")
+    guess = int(input("Please enter a number: "))
+
+print("Well done you guessed the correct number. ")
